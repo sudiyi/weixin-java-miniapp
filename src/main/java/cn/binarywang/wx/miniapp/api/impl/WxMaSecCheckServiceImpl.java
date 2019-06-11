@@ -1,9 +1,12 @@
 package cn.binarywang.wx.miniapp.api.impl;
 
 import java.io.File;
+import java.util.Map;
 
 import cn.binarywang.wx.miniapp.api.WxMaSecCheckService;
 import cn.binarywang.wx.miniapp.api.WxMaService;
+import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
+
 import com.google.gson.JsonObject;
 import me.chanjar.weixin.common.bean.result.WxMediaUploadResult;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -43,6 +46,17 @@ public class WxMaSecCheckServiceImpl implements WxMaSecCheckService {
     }
 
     return true;
+  }
+
+  @Override
+  public String mediaCheckAsync(String mediaUrl, Integer mediaType) throws WxErrorException {
+	JsonObject params = new JsonObject();
+	params.addProperty("media_url", mediaUrl);
+	params.addProperty("mediaType", mediaType);
+	String responseContent = this.service.post(MEDIA_CHECK_ASYNC, params.toString());
+	@SuppressWarnings("unchecked")
+	Map<String, Object> result = WxMaGsonBuilder.create().fromJson(responseContent, Map.class);
+	return result.get("trace_id").toString();
   }
 
 }

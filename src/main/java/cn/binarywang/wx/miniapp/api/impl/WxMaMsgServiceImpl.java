@@ -39,11 +39,24 @@ public class WxMaMsgServiceImpl implements WxMaMsgService {
 
   @Override
   public void sendUniformMsg(WxMaUniformMessage uniformMessage) throws WxErrorException {
+	  //TODO 请求参数模板与最新文档不一致
     String responseContent = this.wxMaService.post(UNIFORM_MSG_SEND_URL, uniformMessage.toJson());
     JsonObject jsonObject = JSON_PARSER.parse(responseContent).getAsJsonObject();
     if (jsonObject.get(WxMaConstants.ERRCODE).getAsInt() != 0) {
       throw new WxErrorException(WxError.fromJson(responseContent));
     }
+  }
+
+  @Override
+  public void customTyping(String touser, String command) throws WxErrorException {
+	JsonObject param = new JsonObject();
+	param.addProperty("touser", touser);
+	param.addProperty("command", command);
+	String responseContent = this.wxMaService.post(CUSTOM_TYPING, param.toString());
+	JsonObject jsonObject = JSON_PARSER.parse(responseContent).getAsJsonObject();
+	if (jsonObject.get(WxMaConstants.ERRCODE).getAsInt() != 0) {
+	   throw new WxErrorException(WxError.fromJson(responseContent));
+	}
   }
 
 }

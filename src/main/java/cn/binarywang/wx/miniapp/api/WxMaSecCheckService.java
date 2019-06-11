@@ -19,6 +19,11 @@ public interface WxMaSecCheckService {
   String MSG_SEC_CHECK_URL = "https://api.weixin.qq.com/wxa/msg_sec_check";
 
   /**
+   * 异步校验图片/音频是否含有违法违规内容
+   */
+  String MEDIA_CHECK_ASYNC = "https://api.weixin.qq.com/wxa/media_check_async";
+  
+  /**
    * <pre>
    * 校验一张图片是否含有违法违规内容.
    * 应用场景举例：
@@ -40,4 +45,12 @@ public interface WxMaSecCheckService {
    * </pre>
    */
   boolean checkMessage(String msgString);
+  
+  /**
+   * 异步校验图片/音频是否含有违法违规内容
+   * @param mediaUrl 要检测的多媒体url
+   * @param mediaType 1:音频;2:图片
+   * @return
+   */
+  String mediaCheckAsync(String mediaUrl, Integer mediaType) throws WxErrorException;
 }

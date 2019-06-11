@@ -16,6 +16,11 @@ public interface WxMaMsgService {
   String KEFU_MESSAGE_SEND_URL = "https://api.weixin.qq.com/cgi-bin/message/custom/send";
   String TEMPLATE_MSG_SEND_URL = "https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send";
   String UNIFORM_MSG_SEND_URL = "https://api.weixin.qq.com/cgi-bin/message/wxopen/template/uniform_send";
+  
+  /**
+   * 下发客服当前输入状态给用户
+   */
+  String CUSTOM_TYPING  = "https://api.weixin.qq.com/cgi-bin/message/custom/typing";
 
   /**
    * <pre>
@@ -44,4 +49,16 @@ public interface WxMaMsgService {
    * </pre>
    */
   void sendUniformMsg(WxMaUniformMessage uniformMessage) throws WxErrorException;
+  
+  /**
+   * <pre>
+   * 下发客服当前输入状态给用户
+   * </pre>
+   * @param touser 用户openid
+   * @param command 命令（Typing	：对用户下发"正在输入"状态；CancelTyping：取消对用户的"正在输入"状态）
+   * @throws WxErrorException
+   */
+  void customTyping(String touser, String command) throws WxErrorException;
+  
+  
 }
