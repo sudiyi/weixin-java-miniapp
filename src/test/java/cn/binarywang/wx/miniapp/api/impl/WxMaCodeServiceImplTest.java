@@ -25,7 +25,6 @@ import static org.testng.Assert.*;
  * @author <a href="https://github.com/charmingoh">Charming</a>
  * @since 2018-04-26 20:18
  */
-@Test
 @Guice(modules = ApiTestModule.class)
 public class WxMaCodeServiceImplTest {
   @Inject
@@ -33,13 +32,11 @@ public class WxMaCodeServiceImplTest {
   @Inject
   private WxMaConfig wxMaConfig;
 
-  @Test
   public void testGetCategory() throws Exception {
     List<WxMaCategory> categories = wxService.getCodeService().getCategory();
     System.out.println(String.valueOf(categories));
   }
 
-  @Test
   public void testCommit() throws Exception {
     String themeColor = "#0074d9";
     String themeFontColor = "#ffffff";
@@ -74,19 +71,17 @@ public class WxMaCodeServiceImplTest {
     wxMaCodeService.commit(commitRequest);
   }
 
-  @Test
+  
   public void testGetQrCode() throws Exception {
     byte[] qrCode = wxService.getCodeService().getQrCode(null);
     assertTrue(qrCode.length > 0);
   }
 
-  @Test
   public void testGetPage() throws Exception {
     List<String> pageList = wxService.getCodeService().getPage();
     System.out.println(String.valueOf(pageList));
   }
 
-  @Test
   public void testSubmitAudit() throws Exception {
     WxMaCodeSubmitAuditRequest auditRequest = WxMaCodeSubmitAuditRequest
       .builder()
@@ -108,47 +103,39 @@ public class WxMaCodeServiceImplTest {
     System.out.println(auditId);
   }
 
-  @Test
   public void testGetAuditStatus() throws Exception {
     WxMaCodeAuditStatus auditStatus = wxService.getCodeService().getAuditStatus(421937937L);
     System.out.println(auditStatus);
     assertNotNull(auditStatus);
   }
 
-  @Test
   public void testGetLatestAuditStatus() throws Exception {
     WxMaCodeAuditStatus auditStatus = wxService.getCodeService().getLatestAuditStatus();
     System.out.println(auditStatus);
     assertNotNull(auditStatus);
   }
 
-  @Test
   public void testRelease() throws Exception {
     wxService.getCodeService().release();
   }
 
-  @Test
   public void testChangeVisitStatus() throws Exception {
     wxService.getCodeService().changeVisitStatus("open");
   }
 
-  @Test
   public void testRevertCodeRelease() throws Exception {
     wxService.getCodeService().revertCodeRelease();
   }
 
-  @Test
   public void testGetSupportVersion() throws Exception {
     WxMaCodeVersionDistribution distribution = wxService.getCodeService().getSupportVersion();
     System.out.println(distribution);
   }
 
-  @Test
   public void testSetSupportVersion() throws Exception {
     wxService.getCodeService().setSupportVersion("1.2.0");
   }
 
-  @Test
   public void testUndoCodeAudit() throws Exception {
 
   }

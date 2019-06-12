@@ -19,7 +19,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * @author yangtao
  * @date 2019/06/11
  */
-public interface LogisticsService {
+public interface WxMaLogisticsService {
 
 	/**
 	 * 查询运单轨迹
@@ -181,8 +181,8 @@ public interface LogisticsService {
 	 * methods:POST
 	 * 接口文档：https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/express/by-provider/logistics.getContact.html
 	 * </pre>
-	 * @param token
-	 * @param waybillId
+	 * @param token 商户侧下单事件中推送的 Token 字段
+	 * @param waybillId 运单id
 	 * @return
 	 * @throws WxErrorException
 	 */

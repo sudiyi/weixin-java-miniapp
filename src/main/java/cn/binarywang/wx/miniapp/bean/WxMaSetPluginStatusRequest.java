@@ -2,8 +2,9 @@ package cn.binarywang.wx.miniapp.bean;
 
 import java.io.Serializable;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 修改插件使用申请的状态（供插件开发者调用）
@@ -12,7 +13,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaSetPluginStatusRequest implements Serializable{
 
 	private static final long serialVersionUID = -561945357541950148L;

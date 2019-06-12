@@ -53,6 +53,11 @@ public class WxMaServiceImpl implements WxMaService, RequestHttp<CloseableHttpCl
   private WxMaShareService shareService = new WxMaShareServiceImpl(this);
   private WxMaRunService runService = new WxMaRunServiceImpl(this);
   private WxMaSecCheckService secCheckService = new WxMaSecCheckServiceImpl(this);
+  private WxMaLogisticsService logisticsService = new WxMaLogisticsServiceImpl(this);
+  private WxMaNearbyPoiService nearbyPoiService = new WxMaNearbyPoiServiceImpl(this);
+  private WxMaSoterService soterService = new WxMaSoterServiceImpl(this);
+  private WxMaActivityMsgService activityMsgService = new WxMaActivityMsgServiceImpl(this);
+  private WxMaPluginService pluginService = new WxMaPluginServiceImpl(this);
 
   private int retrySleepMillis = 1000;
   private int maxRetryTimes = 5;
@@ -261,6 +266,7 @@ public class WxMaServiceImpl implements WxMaService, RequestHttp<CloseableHttpCl
       if (error.getErrorCode() == ERR_40001
         || error.getErrorCode() == ERR_42001
         || error.getErrorCode() == ERR_40014) {
+    	log.debug("刷新accessToken，并重置请求：\n【请求地址】: {}\n【请求参数】：{}\n【响应数据】：{}", uriWithAccessToken, dataForLog, error);
         // 强制设置WxMaConfig的access token过期了，这样在下一次请求里就会刷新access token
         this.getWxMaConfig().expireAccessToken();
         if (this.getWxMaConfig().autoRefreshToken()) {
@@ -358,5 +364,30 @@ public class WxMaServiceImpl implements WxMaService, RequestHttp<CloseableHttpCl
   @Override
   public WxMaSecCheckService getSecCheckService() {
     return this.secCheckService;
+  }
+
+  @Override
+  public WxMaLogisticsService getLogisticsService() {
+	return this.logisticsService;
+  }
+
+  @Override
+  public WxMaNearbyPoiService getNearbyPoiService() {
+	return this.nearbyPoiService;
+  }
+
+  @Override
+  public WxMaSoterService getSoterService() {
+	return this.soterService;
+  }
+
+  @Override
+  public WxMaActivityMsgService getActivityMsgService() {
+	return this.activityMsgService;
+  }
+
+  @Override
+  public WxMaPluginService getPluginService() {
+	return this.pluginService;
   }
 }

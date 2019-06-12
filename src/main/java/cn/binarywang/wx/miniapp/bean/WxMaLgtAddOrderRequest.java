@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 生成运单
@@ -14,7 +15,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaLgtAddOrderRequest implements Serializable{
 
 	private static final long serialVersionUID = 8645242204059661609L;

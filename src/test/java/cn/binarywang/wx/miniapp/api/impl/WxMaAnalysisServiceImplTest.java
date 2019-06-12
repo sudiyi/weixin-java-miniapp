@@ -24,6 +24,7 @@ import static org.testng.Assert.*;
 /**
  * @author <a href="https://github.com/charmingoh">Charming</a>
  * @since 2018-04-28
+ * TODO 20190612 覆盖测试时此处因没有业务数据，故所有接口返回的数据均为空，实际使用该接口时需重复测试；yangtao
  */
 @Guice(modules = ApiTestModule.class)
 public class WxMaAnalysisServiceImplTest {

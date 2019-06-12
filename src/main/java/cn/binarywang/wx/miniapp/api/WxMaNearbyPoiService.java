@@ -11,7 +11,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * @author yangtao
  * @date 2019/06/11
  */
-public interface NearbyPoiService {
+public interface WxMaNearbyPoiService {
 
 	/**
 	 * 添加地点

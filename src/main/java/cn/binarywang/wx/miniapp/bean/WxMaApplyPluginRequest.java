@@ -1,9 +1,13 @@
 package cn.binarywang.wx.miniapp.bean;
 
 import java.io.Serializable;
+
+import com.google.gson.annotations.SerializedName;
+
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 向插件开发者发起使用插件的申请-请求实体
@@ -12,7 +16,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaApplyPluginRequest implements Serializable{
 
 	private static final long serialVersionUID = -8293715446264329656L;
@@ -25,6 +30,7 @@ public class WxMaApplyPluginRequest implements Serializable{
 	/**
 	 * 插件appid
 	 */
+	@SerializedName("plugin_appid")
 	private String pluginAppid;
 	
 	/**

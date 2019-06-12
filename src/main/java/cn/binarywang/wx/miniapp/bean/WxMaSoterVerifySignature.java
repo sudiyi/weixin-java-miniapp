@@ -2,10 +2,10 @@ package cn.binarywang.wx.miniapp.bean;
 
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;
-
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * SOTER 生物认证秘钥签名验证-请求参数
@@ -14,7 +14,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaSoterVerifySignature implements Serializable{
 
 	private static final long serialVersionUID = -5844705081494850744L;

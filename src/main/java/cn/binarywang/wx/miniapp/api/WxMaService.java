@@ -206,6 +206,36 @@ public interface WxMaService {
    * @return WxMaShareService
    */
   WxMaSecCheckService getSecCheckService();
+  
+  /**
+   * 返回物流助手相关接口服务对象
+   * @return
+   */
+  WxMaLogisticsService getLogisticsService();
+  
+  /**
+   * 返回“附近的小程序”相关接口服务对象
+   * @return
+   */
+  WxMaNearbyPoiService getNearbyPoiService();
+  
+  /**
+   * 返回生物认证相关接口服务对象
+   * @return
+   */
+  WxMaSoterService getSoterService();
+  
+  /**
+   * 返回动态消息相关接口服务对象
+   * @return
+   */
+  WxMaActivityMsgService getActivityMsgService();
+  
+  /**
+   * 返回插件管理相关接口服务对象
+   * @return
+   */
+  WxMaPluginService getPluginService();
 
   /**
    * 初始化http请求对象.

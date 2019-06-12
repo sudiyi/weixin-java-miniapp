@@ -2,7 +2,7 @@ package cn.binarywang.wx.miniapp.api.impl;
 
 import java.util.Map;
 
-import cn.binarywang.wx.miniapp.api.SoterService;
+import cn.binarywang.wx.miniapp.api.WxMaSoterService;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaSoterVerifySignature;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
@@ -13,11 +13,11 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * @author yangtao
  * @date 2019/06/11
  */
-public class SoterServiceImpl implements SoterService{
+public class WxMaSoterServiceImpl implements WxMaSoterService{
 
 	private WxMaService wxMaService;
 	
-	public SoterServiceImpl(WxMaService wxMaService){
+	public WxMaSoterServiceImpl(WxMaService wxMaService){
 		this.wxMaService = wxMaService;
 	}
 	

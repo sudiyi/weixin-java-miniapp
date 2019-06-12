@@ -53,6 +53,8 @@ public interface WxMaMsgService {
   /**
    * <pre>
    * 下发客服当前输入状态给用户
+   * methods:POST
+   * 接口文档：https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.setTyping.html
    * </pre>
    * @param touser 用户openid
    * @param command 命令（Typing	：对用户下发"正在输入"状态；CancelTyping：取消对用户的"正在输入"状态）

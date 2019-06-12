@@ -3,8 +3,9 @@ package cn.binarywang.wx.miniapp.bean;
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 查询运单轨迹
@@ -13,7 +14,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaLgtGetPathRequest implements Serializable{
 
 	private static final long serialVersionUID = 2039173361860431497L;

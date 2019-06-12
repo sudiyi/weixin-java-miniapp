@@ -1,7 +1,7 @@
 package cn.binarywang.wx.miniapp.api.impl;
 
 import com.google.gson.JsonObject;
-import cn.binarywang.wx.miniapp.api.NearbyPoiService;
+import cn.binarywang.wx.miniapp.api.WxMaNearbyPoiService;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaAddNearbyRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaAddNearbyResult;
@@ -13,11 +13,11 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * @author yangtao
  * @date 2019/06/11
  */
-public class NearbyPoiServiceImpl implements NearbyPoiService{
+public class WxMaNearbyPoiServiceImpl implements WxMaNearbyPoiService{
 
 	private WxMaService wxMaService;
 	
-	public NearbyPoiServiceImpl(WxMaService wxMaService){
+	public WxMaNearbyPoiServiceImpl(WxMaService wxMaService){
 		this.wxMaService = wxMaService;
 	}
 	

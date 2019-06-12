@@ -108,6 +108,34 @@ public class WxMaMessage implements Serializable {
   @XStreamConverter(value = XStreamCDataConverter.class)
   private String sessionFrom;
 
+  //附近的小程序add回调
+  @SerializedName("audit_id")
+  @XStreamAlias("audit_id")
+  private String auditId;
+  
+  private String status;
+  
+  private String reason;
+  
+  @XStreamAlias("poi_id")
+  @SerializedName("poi_id")
+  private String poiId;
+  
+  //内容安全：媒体文件异步检测回调
+  private String isrisky;
+  
+  @XStreamAlias("extra_info_json")
+  @SerializedName("extra_info_json")
+  private String extraInfoJson;
+  
+  @XStreamAlias("trace_id")
+  @SerializedName("trace_id")
+  private String traceId;
+  
+  @SerializedName("status_code")
+  @XStreamAlias("status_code")
+  private String statusCode;
+  
   public static WxMaMessage fromXml(String xml) {
     return XStreamTransformer.fromXml(WxMaMessage.class, xml);
   }

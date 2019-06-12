@@ -3,10 +3,10 @@ package cn.binarywang.wx.miniapp.bean;
 import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
-
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 修改被分享的动态消息，请求实体
@@ -15,7 +15,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaSetUpdatableMsgRequest implements Serializable{
 
 	private static final long serialVersionUID = 6658794961262934719L;
@@ -23,11 +24,13 @@ public class WxMaSetUpdatableMsgRequest implements Serializable{
 	/**
 	 * 动态消息的 ID，通过 updatableMessage.createActivityId 接口获取
 	 */
+	@SerializedName("activity_id")
 	private String activityId;
 	
 	/**
-	 * 动态消息修改后的状态（具体含义见后文）
+	 * 动态消息修改后的状态（0：未开始；1：已开始)
 	 */
+	@SerializedName("targe_state")
 	private Integer targetState;
 	
 	/**

@@ -52,7 +52,7 @@ public class WxMaSecCheckServiceImpl implements WxMaSecCheckService {
   public String mediaCheckAsync(String mediaUrl, Integer mediaType) throws WxErrorException {
 	JsonObject params = new JsonObject();
 	params.addProperty("media_url", mediaUrl);
-	params.addProperty("mediaType", mediaType);
+	params.addProperty("media_type", mediaType);
 	String responseContent = this.service.post(MEDIA_CHECK_ASYNC, params.toString());
 	@SuppressWarnings("unchecked")
 	Map<String, Object> result = WxMaGsonBuilder.create().fromJson(responseContent, Map.class);

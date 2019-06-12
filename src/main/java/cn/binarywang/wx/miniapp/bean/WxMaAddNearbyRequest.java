@@ -3,8 +3,9 @@ package cn.binarywang.wx.miniapp.bean;
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 附近的小程序，添加地点
@@ -13,7 +14,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaAddNearbyRequest implements Serializable{
 
 	private static final long serialVersionUID = -2661864706131375674L;
@@ -60,6 +62,7 @@ public class WxMaAddNearbyRequest implements Serializable{
 	/**
 	 * 主体名字，必填
 	 */
+	@SerializedName("company_name")
 	private String companyName;
 	
 	/**

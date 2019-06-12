@@ -20,6 +20,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * 测试消息相关接口
  *
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
+ * TODO 还未找到模拟测试的方法 yangtao 20190612
  */
 @Test
 @Guice(modules = ApiTestModule.class)
@@ -76,5 +77,10 @@ public class WxMaMsgServiceImplTest {
       .addData(new WxMaTemplateData("keyword4", "广州市海珠区新港中路397号"));
 
     this.wxService.getMsgService().sendUniformMsg(message);
+  }
+  
+  @Test
+  public void testCustomTyping() throws WxErrorException{
+	  this.wxService.getMsgService().customTyping("openid", "Typing");
   }
 }

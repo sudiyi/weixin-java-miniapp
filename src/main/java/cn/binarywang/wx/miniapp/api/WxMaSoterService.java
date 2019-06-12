@@ -9,7 +9,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * @author yangtao
  * @date 2019/06/11
  */
-public interface SoterService {
+public interface WxMaSoterService {
 
 	/**
 	 * SOTER 生物认证秘钥签名验证

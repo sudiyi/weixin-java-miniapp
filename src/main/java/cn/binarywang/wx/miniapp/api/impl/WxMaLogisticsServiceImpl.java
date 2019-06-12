@@ -2,7 +2,7 @@ package cn.binarywang.wx.miniapp.api.impl;
 
 import java.util.Map;
 import com.google.gson.JsonObject;
-import cn.binarywang.wx.miniapp.api.LogisticsService;
+import cn.binarywang.wx.miniapp.api.WxMaLogisticsService;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderResult;
@@ -22,11 +22,11 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * @author yangtao
  * @date 2019/06/11
  */
-public class LogisticsServiceImpl implements LogisticsService{
+public class WxMaLogisticsServiceImpl implements WxMaLogisticsService{
 
 	private WxMaService wxMaService;
 	
-	public LogisticsServiceImpl(WxMaService wxMaService){
+	public WxMaLogisticsServiceImpl(WxMaService wxMaService){
 		this.wxMaService = wxMaService;
 	}
 	
