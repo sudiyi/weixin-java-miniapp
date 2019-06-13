@@ -20,9 +20,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
  * 测试消息相关接口
  *
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
- * TODO 还未找到模拟测试的方法 yangtao 20190612
  */
-@Test
 @Guice(modules = ApiTestModule.class)
 public class WxMaMsgServiceImplTest {
 
@@ -39,7 +37,7 @@ public class WxMaMsgServiceImplTest {
     this.wxService.getMsgService().sendKefuMsg(message);
   }
 
-  @Test(invocationCount = 5, threadPoolSize = 3)
+  //@Test(invocationCount = 5, threadPoolSize = 3)
   public void testSendTemplateMsg() throws WxErrorException {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     TestConfig config = (TestConfig) this.wxService.getWxMaConfig();
@@ -60,15 +58,14 @@ public class WxMaMsgServiceImplTest {
     this.wxService.getMsgService().sendTemplateMsg(templateMessage);
   }
 
-  @Test
+  //@Test
   public void testSendUniformMsg() throws WxErrorException {
     TestConfig config = (TestConfig) this.wxService.getWxMaConfig();
     WxMaUniformMessage message =  WxMaUniformMessage.builder()
       .isMpTemplateMsg(false)
       .toUser(config.getOpenid())
       .page("page/page/index")
-      .templateId("TEMPLATE_ID")
-      .formId("FORMID")
+      .templateId(config.getTemplateId())
       .emphasisKeyword("keyword1.DATA")
       .build();
     message.addData(new WxMaTemplateData("keyword1", "339208499"))
@@ -81,6 +78,7 @@ public class WxMaMsgServiceImplTest {
   
   @Test
   public void testCustomTyping() throws WxErrorException{
-	  this.wxService.getMsgService().customTyping("openid", "Typing");
+	  TestConfig config = (TestConfig) this.wxService.getWxMaConfig();
+	  this.wxService.getMsgService().customTyping(config.getOpenid(), "Typing");
   }
 }

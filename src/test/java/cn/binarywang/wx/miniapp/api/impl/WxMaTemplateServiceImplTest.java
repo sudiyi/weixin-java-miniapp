@@ -14,20 +14,20 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-@Test
+//@Test
 @Guice(modules = ApiTestModule.class)
 public class WxMaTemplateServiceImplTest {
 
   @Inject
   protected WxMaService wxService;
 
-  @Test
+  //@Test
   public void testFindTemplateLibraryList() throws Exception {
     WxMaTemplateLibraryListResult result = this.wxService.getTemplateService().findTemplateLibraryList(0, 20);
     Assert.assertEquals(20, result.getList().size());
   }
 
-  @Test
+  //@Test
   public void testFindTemplateLibraryKeywordList() throws Exception {
     WxMaTemplateLibraryGetResult result = this.wxService.getTemplateService().findTemplateLibraryKeywordList("AT0004");
     Assert.assertEquals("AT0004", result.getId());
@@ -35,7 +35,7 @@ public class WxMaTemplateServiceImplTest {
     Assert.assertEquals(100, result.getKeywordList().size());
   }
 
-  @Test
+  //@Test
   public void testAddTemplate() throws Exception{
     List<Integer> list = Lists.newArrayList();
     list.add(1);
@@ -47,7 +47,7 @@ public class WxMaTemplateServiceImplTest {
     System.out.println(result);
   }
 
-  @Test
+  //@Test
   public void testFindTemplateList() throws Exception{
     WxMaTemplateListResult result = this.wxService.getTemplateService().findTemplateList(0, 20);
     System.out.println(result);

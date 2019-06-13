@@ -48,6 +48,7 @@ public class WxMaLogisticsServiceImplTest {
 		logisticsService.cancelOrder(cancelOrderRequest);
 	}
 	
+	@Test
 	void testGetAllDelivery() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.getAllDelivery()));
@@ -59,45 +60,38 @@ public class WxMaLogisticsServiceImplTest {
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.getOrder(getOrder)));
 	}
 	
-	@Test
 	void testGetPrinter() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.getPrinter()));
 	}
 	
-	@Test
 	void testGetQuota() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.getQuota("deliveryId", "bizId")));
 	}
 	
-	@Test
 	void testUpdatePrinter() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		logisticsService.updatePrinter("openId", "bind");
 	}
 	
-	@Test
 	void testGetContact() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.getContact("token", "waybillid")));
 	}
 	
-	@Test
 	void testPreviewTemplate() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		WxMaLgtPreviewTemplateRequest previewTemplate = new WxMaLgtPreviewTemplateRequest();
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.previewTemplate(previewTemplate)));
 	}
 	
-	@Test
 	void testUpdateBusiness() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		WxMaLgtUpdateBusinessRequest updateBusiness = new WxMaLgtUpdateBusinessRequest();
 		logisticsService.updateBusiness(updateBusiness);
 	}
 	
-	@Test
 	void testUpdatePath() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		WxMaLgtUpdatePathRequest updatePath = new WxMaLgtUpdatePathRequest();

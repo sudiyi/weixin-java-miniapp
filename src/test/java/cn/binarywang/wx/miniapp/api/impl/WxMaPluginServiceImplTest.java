@@ -26,12 +26,12 @@ public class WxMaPluginServiceImplTest {
 	@Inject
 	private WxMaService wxMaService;
 	
-	//@Test
+	@Test
 	void testApplyPlugin() throws WxErrorException{
 		WxMaPluginService pluginService = wxMaService.getPluginService();
 		WxMaApplyPluginRequest applyPlugin = new WxMaApplyPluginRequest();
 		applyPlugin.setAction("apply");
-		applyPlugin.setPluginAppid("pluginId");
+		applyPlugin.setPluginAppid("wxd3dc4206c76f14fc");
 		applyPlugin.setReason("测试调用");
 		pluginService.applyPlugin(applyPlugin);
 	}
@@ -46,23 +46,25 @@ public class WxMaPluginServiceImplTest {
 		log.info(WxMaGsonBuilder.create().toJson(pluginService.getPluginDevApplyList(getPluginDev)));
 	}
 	
-	@Test
+	//@Test
 	void testGetPluginList() throws WxErrorException{
 		WxMaPluginService pluginService = wxMaService.getPluginService();
 		log.info(WxMaGsonBuilder.create().toJson(pluginService.getPluginList("list")));
 	}
 	
-	@Test
+	//@Test
 	void testSetPluginStatus() throws WxErrorException{
 		WxMaPluginService pluginService = wxMaService.getPluginService();
 		WxMaSetPluginStatusRequest setPluginStatus = new WxMaSetPluginStatusRequest();
 		pluginService.setPluginStatus(setPluginStatus);
 	}
 	
-	@Test
+	//@Test
 	void testUnbindPlugin() throws WxErrorException{
 		WxMaPluginService pluginService = wxMaService.getPluginService();
 		WxMaUnbindPluginRequest unbingPlugin = new WxMaUnbindPluginRequest();
+		unbingPlugin.setPluginAppid("wxd3dc4206c76f14fc");
+		unbingPlugin.setAction("unbind");
 		pluginService.unbindPlugin(unbingPlugin);
 	}
 }

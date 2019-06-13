@@ -1,11 +1,11 @@
 <xml>
   <msgDataFormat>JSON或者XML</msgDataFormat>
-  <appid>wxe8b7c5dcd1af04f1</appid>
-  <secret>645f84c4698e48688e92602e28507a75</secret>
+  <appid>wx14019a8e36882db7</appid>
+  <secret>058d41284a956dfae15d11fc256143a9</secret>
   <token>Token</token>
   <aesKey>EncodingAESKey</aesKey>
   <accessToken>accessToken</accessToken>
   <expiresTime>7200</expiresTime>
-  <openid>openId</openid>
-  <templateId>templateId</templateId>
+  <openid>ofGIs5Ia7QPLpHQ9ynrsMU25vbWk</openid>
+  <templateId>IrXk5IpBl9h5duJmLSGhDJ15MC_85K8caiC7dkWiwBQ</templateId>
 </xml>
