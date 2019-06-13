@@ -1,4 +1,4 @@
-package cn.binarywang.wx.miniapp.api.impl;
+package cn.binarywang.wx.miniapp.bean;
 
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;

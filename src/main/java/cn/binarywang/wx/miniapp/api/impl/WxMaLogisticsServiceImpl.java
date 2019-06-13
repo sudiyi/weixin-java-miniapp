@@ -8,10 +8,13 @@ import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtCancelOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetAllDeliveryResult;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtGetContactResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetOrderResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPathRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPathResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPrinterResult;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtPreviewTemplateRequest;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtPreviewTemplateResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtUpdateBusinessRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtUpdatePathRequest;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
@@ -102,6 +105,13 @@ public class WxMaLogisticsServiceImpl implements WxMaLogisticsService{
 	@Override
 	public void updatePath(WxMaLgtUpdatePathRequest updatePath) throws WxErrorException {
 		this.wxMaService.post(UPDATE_PATH, updatePath.toJson());
+	}
+
+	@Override
+	public WxMaLgtPreviewTemplateResult previewTemplate(WxMaLgtPreviewTemplateRequest previewTemplate)
+			throws WxErrorException {
+		String responseContent = this.wxMaService.post(PREVIEW_TEMPLATE, previewTemplate.toJson());
+		return WxMaLgtPreviewTemplateResult.fromJson(responseContent);
 	}
 
 }

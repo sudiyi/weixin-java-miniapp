@@ -69,4 +69,47 @@ public class WxMaConstants {
      */
     public static final int ERR_40014 = 40014;
   }
+  
+  /**
+   * 微信小程序回调事件类型常量
+   * @author yangtao
+   * @date 2019/06/13
+   */
+  public static class WxMaEventType{
+	  
+	  /**
+	   * 审核状态通过事件推送通知，推送数据格式为 XML
+	   */
+	  public static final String ADD_NEARBY_POI_AUDIT_INFO = "add_nearby_poi_audit_info";
+  
+	  /**
+	   * 异步校验图片/音频通知结果，json数据包
+	   */
+	  public static final String WXA_DEDIA_CHECK = "wxa_media_check";
+  
+	  /**
+	   * 运单轨迹更新事件
+	   */
+	  public static final String ADD_EXPRESS_PATH = "add_express_path";
+  
+	  /**
+	   * 请求下单事件
+	   */
+	  public static final String ADD_WAYBILL = "add_waybill";
+  
+	  /**
+	   * 取消订单事件
+	   */
+	  public static final String CANCEL_WAYBILL = "cancel_waybill";
+  
+	  /**
+	   * 审核商户事件
+	   */
+	  public static final String CHECK_BIZ = "check_biz";
+	  
+	  /**
+	   * 查询商户余额事件
+	   */
+	  public static final String GET_QUOTA = "get_quota";
+  }
 }

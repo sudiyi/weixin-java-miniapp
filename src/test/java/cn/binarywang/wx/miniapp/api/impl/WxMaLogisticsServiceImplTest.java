@@ -8,6 +8,7 @@ import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtCancelOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPathRequest;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtPreviewTemplateRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtUpdateBusinessRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtUpdatePathRequest;
 import cn.binarywang.wx.miniapp.test.ApiTestModule;
@@ -80,6 +81,13 @@ public class WxMaLogisticsServiceImplTest {
 	void testGetContact() throws WxErrorException{
 		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
 		log.info(WxMaGsonBuilder.create().toJson(logisticsService.getContact("token", "waybillid")));
+	}
+	
+	@Test
+	void testPreviewTemplate() throws WxErrorException{
+		WxMaLogisticsService logisticsService = wxMaService.getLogisticsService();
+		WxMaLgtPreviewTemplateRequest previewTemplate = new WxMaLgtPreviewTemplateRequest();
+		log.info(WxMaGsonBuilder.create().toJson(logisticsService.previewTemplate(previewTemplate)));
 	}
 	
 	@Test

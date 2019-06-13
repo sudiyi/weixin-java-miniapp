@@ -3,8 +3,9 @@ package cn.binarywang.wx.miniapp.bean;
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;
 import cn.binarywang.wx.miniapp.util.json.WxMaGsonBuilder;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 预览面单模板。用于调试面单模板使用。
@@ -13,7 +14,8 @@ import lombok.Data;
  * @date 2019/06/11
  */
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WxMaLgtPreviewTemplateResult implements Serializable{
 
 	private static final long serialVersionUID = 817538838211661148L;
@@ -34,7 +36,7 @@ public class WxMaLgtPreviewTemplateResult implements Serializable{
 	
 	private String errmsg;
 	
-	public WxMaLgtPreviewTemplateResult fromJson(String json){
+	public static WxMaLgtPreviewTemplateResult fromJson(String json){
 		return WxMaGsonBuilder.create().fromJson(json, WxMaLgtPreviewTemplateResult.class);
 	}
 }

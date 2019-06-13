@@ -1,14 +1,16 @@
 package cn.binarywang.wx.miniapp.api;
 
-import cn.binarywang.wx.miniapp.api.impl.WxMaLgtGetContactResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtAddOrderResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtCancelOrderRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetAllDeliveryResult;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtGetContactResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetOrderResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPathRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPathResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtGetPrinterResult;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtPreviewTemplateRequest;
+import cn.binarywang.wx.miniapp.bean.WxMaLgtPreviewTemplateResult;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtUpdateBusinessRequest;
 import cn.binarywang.wx.miniapp.bean.WxMaLgtUpdatePathRequest;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -188,6 +190,18 @@ public interface WxMaLogisticsService {
 	 */
 	WxMaLgtGetContactResult getContact(String token, String waybillId) throws WxErrorException;
 
+	/**
+	 * <pre>
+	 * 预览面单模板。用于调试面单模板使用。
+	 * methods:POST
+	 * 接口文档：https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/express/by-provider/logistics.previewTemplate.html
+	 * </pre>
+	 * @param previewTemplate
+	 * @return
+	 * @throws WxErrorException
+	 */
+	WxMaLgtPreviewTemplateResult previewTemplate(WxMaLgtPreviewTemplateRequest previewTemplate) throws WxErrorException;
+	
 	/**
 	 * <pre>
 	 * 更新商户审核结果
